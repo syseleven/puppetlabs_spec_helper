@@ -157,7 +157,7 @@ module PuppetlabsSpecHelper
 
       def include_repo?(version_range)
         if version_range && defined?(SemanticPuppet)
-          puppet_spec = Gem::Specification.find_by_name('puppet')
+          puppet_spec = Gem::Specification.find_by_name('openvox')
           puppet_version = SemanticPuppet::Version.parse(puppet_spec.version.to_s)
 
           constraint = SemanticPuppet::VersionRange.parse(version_range)

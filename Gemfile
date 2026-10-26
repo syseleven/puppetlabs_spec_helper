@@ -1,12 +1,6 @@
 # frozen_string_literal: true
 
-# For puppetcore, set GEM_SOURCE_PUPPETCORE = 'https://rubygems-puppetcore.puppet.com'
 gemsource_default = ENV['GEM_SOURCE'] || 'https://rubygems.org'
-gemsource_puppetcore = if !ENV['PUPPET_FORGE_TOKEN'].to_s.empty?
-                         'https://rubygems-puppetcore.puppet.com'
-                       else
-                         ENV['GEM_SOURCE_PUPPETCORE'] || gemsource_default
-                       end
 source gemsource_default
 
 gemspec
@@ -25,8 +19,6 @@ def location_for(place_or_version, fake_version = nil, opts = {})
 end
 
 group :development do
-  gem 'puppet', *location_for(ENV.fetch('PUPPET_GEM_VERSION', nil), nil, { source: gemsource_puppetcore })
-
   gem 'simplecov'
   gem 'simplecov-console'
 

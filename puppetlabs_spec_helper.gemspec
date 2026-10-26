@@ -30,12 +30,11 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency 'mocha', '>= 1.0', '< 3'
   spec.add_runtime_dependency 'pathspec', '>= 0.2', '< 3'
-  spec.add_runtime_dependency 'puppetlabs-syntax', '~> 7.2', '>= 7.2.1'
-  spec.add_runtime_dependency 'puppet-lint', '~> 5.0'
+  spec.add_runtime_dependency 'puppet-syntax', '>= 7.3', '< 8'
+  spec.add_runtime_dependency 'puppet-lint', '>= 5.1', '< 6'
   spec.add_runtime_dependency 'rspec-github', '>= 2.0', '< 4'
-  spec.add_runtime_dependency 'rspec-puppet', '~> 5.0'
+  spec.add_runtime_dependency 'rspec-puppet', '>= 6.0', '< 7'
+  spec.add_runtime_dependency 'openvox', '~> 8.0'
 
-  spec.add_development_dependency 'voxpupuli-rubocop', '~> 2.8.0'
-
-  spec.requirements << 'puppet, >= 8.0.0'
+  spec.add_development_dependency 'voxpupuli-rubocop', '>= 5.3'
 end
